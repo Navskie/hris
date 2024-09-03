@@ -7,4 +7,6 @@
 
   $db = mysqli_connect($host, $username, $password, $dbName);
 
+  session_start();
+
 ?>

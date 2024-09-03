@@ -22,7 +22,13 @@ $(document).ready(function() {
             notif(response.title, response.message);
             setTimeout(() => {
               $(".notification").removeClass("active");
-              window.location.reload();
+              if (response.role === 'admin') {
+                window.location.href = 'admin/index';
+              } else if (response.role === 'assistant') {
+                window.location.href = 'admin/index';
+              } else {
+                window.location.href = 'dashboard';
+              }
             }, 3000);
           } else {
             notif(response.title, response.message);
