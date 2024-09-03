@@ -18,7 +18,39 @@
   <?php include_once 'include/navbar.php' ?>
 
   <div class="content">
-    asd
+    
+    <div class="navigation">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="details">
+          <h1>Masterlist</h1>
+          <span class="number">56</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-file-pen"></i>
+        </div>
+        <div class="details">
+          <h1>Application</h1>
+          <span class="number">56</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-user-minus"></i>
+        </div>
+        <div class="details">
+          <h1>Resign</h1>
+          <span class="number">14</span>
+        </div>
+      </div>
+    </div>
+
+    
+
   </div>
 
   <?php include_once 'include/footer.php' ?>

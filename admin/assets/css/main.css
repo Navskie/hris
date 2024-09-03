@@ -33,10 +33,7 @@
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
   z-index: 1000;
   top: 100%;
   left: 0;
@@ -56,6 +53,7 @@
 
 .dropdown-menu li {
   padding: 0;
+  background-color: #333;
 }
 
 .dropdown-menu li a {
@@ -91,6 +89,51 @@
   width: 25px;
 }
 
+.content {
+  margin: 30px 110px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: left;
+}
+
+.navigation .card {
+  background-color: #2e2d2d;
+  border: 1px solid #686666;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 300px;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navigation .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navigation h1 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.navigation .number {
+  font-size: 35px;
+  color: #fff;
+}
+
+.navigation .icon i {
+  color: #868686;
+  font-size: 45px;
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
   .navbar {
@@ -99,5 +142,9 @@
 
   .mobile-responsive {
     display: block;
+  }
+
+  .content {
+    margin: 30px 30px;
   }
 }
