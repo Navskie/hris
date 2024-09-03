@@ -14,7 +14,7 @@
     <div class="title"></div>
     <div class="message"></div>
   </div>
-
+  
   <div class="login">
     <span class="header">HRIS</span>
     <p class="note">Sign in to access.</p>
