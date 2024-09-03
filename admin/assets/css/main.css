@@ -67,17 +67,37 @@
   background-color: #575757;
 }
 
+.mobile-responsive {
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  padding: 25px 15px;
+}
+
+.mobile-responsive ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.mobile-responsive ul li {
+  list-style: none;
+}
+
+.mobile-responsive img {
+  width: 25px;
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    opacity: 1;
-    transform: none;
-    box-shadow: none;
+  .navbar {
     display: none;
   }
 
-  .dropdown.open .dropdown-menu {
+  .mobile-responsive {
     display: block;
   }
 }
