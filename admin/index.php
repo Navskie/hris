@@ -57,6 +57,10 @@
     </div>
   </div>
 
+  <div class="content">
+    asd
+  </div>
+
   <?php include_once 'include/footer.php' ?>
 </body>
 </html>
