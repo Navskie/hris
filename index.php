@@ -7,7 +7,11 @@
   <title>HRIS</title>
   <?php 
     if ($_SESSION['id'] != '' || !empty($_SESSION['id'])) {
-      header('Location: admin/index');
+      if ($_SESSION['role'] == 'admin') {
+        header('Location: admin/index');
+      } elseif ($_SESSION['role'] == 'assistant') {
+        header('Location: assistant/index');
+      }
       exit();
     }
   ?>

@@ -2,8 +2,20 @@
     <div class="link">
       <ul>
         <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Masterlist</a></li>
-        <li><a href="#">Payroll</a></li>
+        <li class="dropdown">
+          <a href="#">Masterlist</a>
+          <ul class="dropdown-menu">
+            <li><a href="masterlist-add">Add</a></li>
+            <li><a href="#">Record</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="">Payroll</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Timekeeping</a></li>
+            <li><a href="#">Payroll</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#">Application Form</a>
           <ul class="dropdown-menu">
@@ -32,7 +44,7 @@
         <li class="dropdown">
           <a href="#">Administrator</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Setting</a></li>
+            <li><a href="setting">Setting</a></li>
             <li><a href="../controller/logout/logout">Logout</a></li>
           </ul>
         </li>

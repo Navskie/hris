@@ -1,0 +1,59 @@
+.masterlist {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.personal-info h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+ 
+.personal-info .formgroup {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formgroup label {
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+
+.formgroup input {
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: #1E1E1E;
+  border: 1px solid #575454;
+  color: #fff;
+}
+
+.formgroup .disabled {
+  background-color: #2e2a2a;
+  color: #8f8989;
+}
+
+.default-btn {
+  padding: 10px 16px;
+  margin-top: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #052e88;
+  color: #fff;
+  cursor: pointer;
+}
