@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HRIS</title>
-
+  <?php 
+    if ($_SESSION['id'] != '' || !empty($_SESSION['id'])) {
+      header('Location: admin/index');
+      exit();
+    }
+  ?>
   <?php include_once 'include/header.php' ?>
 </head>
 <body>

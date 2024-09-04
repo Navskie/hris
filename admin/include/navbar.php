@@ -33,7 +33,7 @@
           <a href="#">Administrator</a>
           <ul class="dropdown-menu">
             <li><a href="#">Setting</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="../controller/logout/logout">Logout</a></li>
           </ul>
         </li>
       </ul>
