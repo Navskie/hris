@@ -72,6 +72,7 @@
   width: 100%;
   display: none;
   padding: 25px 15px;
+  position: fixed;
 }
 
 .mobile-responsive ul {
