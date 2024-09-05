@@ -26,11 +26,22 @@
     (`idNumber`, `fullName`, `mobileNumber`, `emailAddress`, `civilStatus`, `gender`, `address`, `dateHired`, `position`, `sss`, `philhealth`, `pagibig`, `tin`)
     VALUES 
     ('$idNumber','$fullname','$mobile','$email','$civilstatus','$gender','$address','$datehired','$position','$sss','$phil','$pagibig', '$tin')";
+    $sql_query = mysqli_query($db,$sql);
 
-    
+    if ($sql_query) {
+      $status = 'success';
+      $title = 'Success';
+      $message = 'Data has been saved';
+    } else {
+      $status = 'failed';
+      $title = 'Failed';
+      $message = 'Please try again';
+    }
 
     $response = [
-      'sample' => $sql,
+      'status' => $status,
+      'title' => $title,
+      'message' => $message,
     ];
 
   }

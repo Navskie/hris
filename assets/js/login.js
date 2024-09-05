@@ -17,7 +17,6 @@ $(document).ready(function() {
         data: { idNumber : idNumber, passWord : passWord },
         dataType: "json",
         success: function(response) {
-          console.log(response.message)
           if (response.status === 'success') {
             notif(response.title, response.message);
             setTimeout(() => {
