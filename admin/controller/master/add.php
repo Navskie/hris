@@ -1,15 +1,13 @@
 <?php
-  include_once '../../../cores/database.php';
+include_once '../../../cores/database.php';
 
-  header('Content-Type: application/json');
+header('Content-Type: application/json');
 
-  $response = [];
+$response = [];
 
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idNumber = htmlspecialchars($_POST['idNumber']);
-    $getFullname = htmlspecialchars($_POST['fullname']);
-    $fullname = ucwords($getFullname);
+    $fullname = ucwords(htmlspecialchars($_POST['fullname']));
     $mobile = htmlspecialchars($_POST['mobile']);
     $email = htmlspecialchars($_POST['email']);
     $civilstatus = htmlspecialchars($_POST['civilstatus']);
@@ -17,35 +15,58 @@
     $gender = htmlspecialchars($_POST['gender']);
     $datehired = htmlspecialchars($_POST['datehired']);
     $position = htmlspecialchars($_POST['position']);
+    $contactPerson = htmlspecialchars($_POST['contactPerson']);
+    $contactNumber = htmlspecialchars($_POST['contactNumber']);
+    $bloodType = htmlspecialchars($_POST['bloodType']);
+    $allergies = htmlspecialchars($_POST['allergies']);
+    $bday = htmlspecialchars($_POST['bday']);
     $sss = htmlspecialchars($_POST['sss']);
     $phil = htmlspecialchars($_POST['phil']);
     $pagibig = htmlspecialchars($_POST['pagibig']);
     $tin = htmlspecialchars($_POST['tin']);
 
-    $sql = "INSERT INTO masterlist 
-    (`idNumber`, `fullName`, `mobileNumber`, `emailAddress`, `civilStatus`, `gender`, `address`, `dateHired`, `position`, `sss`, `philhealth`, `pagibig`, `tin`)
-    VALUES 
-    ('$idNumber','$fullname','$mobile','$email','$civilstatus','$gender','$address','$datehired','$position','$sss','$phil','$pagibig', '$tin')";
-    $sql_query = mysqli_query($db,$sql);
-
-    if ($sql_query) {
-      $status = 'success';
-      $title = 'Success';
-      $message = 'Data has been saved';
+    if (empty($idNumber) || empty($fullname) || empty($mobile) || empty($email) ||
+        empty($civilstatus) || empty($address) || empty($gender) || empty($datehired) ||
+        empty($position) || empty($sss) || empty($phil) || empty($pagibig) || empty($tin)) {
+        $response = [
+            'status' => 'failed',
+            'title' => 'Failed',
+            'message' => 'All fields are required.'
+        ];
     } else {
-      $status = 'failed';
-      $title = 'Failed';
-      $message = 'Please try again';
+        $stmt = $db->prepare("INSERT INTO masterlist 
+            (`idNumber`, `fullName`, `mobileNumber`, `emailAddress`, `civilStatus`, `gender`, `address`, `dateHired`, `position`, `sss`, `philhealth`, `pagibig`, `tin`, `bday`, `contactPerson`, `contactNumber`, `bloodType`, `allergies`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+        if ($stmt) {
+            $stmt->bind_param('issssssssssssssiss', $idNumber, $fullname, $mobile, $email, $civilstatus, $gender, $address, $datehired, $position, $sss, $phil, $pagibig, $tin, $bday, $contactPerson, $contactNumber, $bloodType, $allergies);
+
+            if ($stmt->execute()) {
+                $response = [
+                    'status' => 'success',
+                    'title' => 'Success',
+                    'message' => 'Data has been saved successfully.'
+                ];
+            } else {
+                $response = [
+                    'status' => 'failed',
+                    'title' => 'Failed',
+                    'message' => 'Failed to execute query: ' . $stmt->error
+                ];
+            }
+
+            $stmt->close();
+        } else {
+            $response = [
+                'status' => 'failed',
+                'title' => 'Failed',
+                'message' => 'Failed to prepare the SQL statement.'
+            ];
+        }
     }
 
-    $response = [
-      'status' => $status,
-      'title' => $title,
-      'message' => $message,
-    ];
+    $db->close();
+}
 
-  }
-
-  echo json_encode($response);
-
+echo json_encode($response);
 ?>

@@ -14,10 +14,11 @@
   max-width: 400px;
 }
 
-.personal-info h1 {
+.content .header {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 400;
+  text-align: center;
 }
  
 .personal-info .formgroup {

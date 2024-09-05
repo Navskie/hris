@@ -33,6 +33,8 @@ body {
   border-radius: 10px;
   border: 1px solid #413f3f;
   transition: opacity 0.5s ease;
+  position: fixed;
+  z-index: 1000;
 }
 
 .notification .title {

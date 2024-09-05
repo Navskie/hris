@@ -12,8 +12,8 @@
 <body>
   
   <div class="notification">
-    <div class="title"></div>
-    <div class="message"></div>
+    <div class="title">Success</div>
+    <div class="message">asd asd asd asd</div>
   </div>
 
   <?php include_once 'include/navbar.php' ?>
@@ -23,48 +23,47 @@
     $sql_query = mysqli_query($db, $sql);
     $sql_fetch = mysqli_fetch_array($sql_query);
 
-    $idNumber = 111900000 + $sql_fetch['sum'];
+    $idNumber = 111900003 + $sql_fetch['sum'];
   ?>
 
   <div class="content">
+    <h1 class="header">Employee Information</h1>
     <form id="masterlistForm">
-      <div class="masterlist">
+    
+      <div class="masterlist"> 
         <div class="personal-info">
-          <h1 class="title">Employee Information</h1>
           <div class="formgroup">
-            <label for="">ID Number</label>
-            <input type="text" class="disabled" name="idNumber" autocomplete="OFF" value="<?php echo $idNumber ?>" readonly>
+            <label for="">ID Number *</label>
+            <input type="text" class="disabled" name="idNumber" value="<?php echo $idNumber ?>" readonly>
           </div>
           <div class="formgroup">
-            <label for="">Fullname</label>
-            <input type="text" name="fullname" autocomplete="OFF">
+            <label for="">Fullname *</label>
+            <input type="text" name="fullname" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
-            <label for="">Mobile Number</label>
-            <input type="text" name="mobile" autocomplete="OFF">
+            <label for="">Mobile Number *</label>
+            <input type="text" name="mobile" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
-            <label for="">Email Address</label>
-            <input type="text" name="email" autocomplete="OFF">
+            <label for="">Email Address *</label>
+            <input type="text" name="email" autocomplete="OFF" required>
             <span id="error-message"></span>
           </div>
           <div class="formgroup">
-            <label for="">Civil Status</label>
-            <input type="text" name="civilstatus" autocomplete="OFF">
-            <div class="dropdown-list">
-              <ul class="select civilstatus">
-                <li>Single</li>
-                <li>Married</li>
-              </ul>
-            </div>
+            <label for="">Birthday *</label>
+            <input type="date" name="bday" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
-            <label for="">Address</label>
-            <input type="text" name="address" autocomplete="OFF">
+            <label for="">Address *</label>
+            <input type="text" name="address" autocomplete="OFF" required>
           </div>
+        </div>
+
+
+        <div class="personal-info">
           <div class="formgroup">
-            <label for="">Gender</label>
-            <input type="text" name="gender" autocomplete="OFF">
+            <label for="">Gender *</label>
+            <input type="text" name="gender" autocomplete="OFF" required>
             <div class="dropdown-list">
               <ul class="select gender">
                 <li>Male</li>
@@ -73,16 +72,24 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="personal-info">
-          <h1 class="title">Company Information</h1>
+          <div class="formgroup">
+            <label for="">Civil Status *</label>
+            <input type="text" name="civilstatus" autocomplete="OFF" required>
+            <div class="dropdown-list">
+              <ul class="select civilstatus">
+                <li>Single</li>
+                <li>Married</li>
+              </ul>
+            </div>
+          </div>
+          
           <div class="formgroup">
             <label for="">Date Hired</label>
-            <input type="date" name="datehired" autocomplete="OFF">
+            <input type="date" name="datehired" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
-            <label for="">Position</label>
-            <input type="text" name="position" autocomplete="OFF">
+            <label for="">Position *</label>
+            <input type="text" name="position" autocomplete="OFF" required>
             <div class="dropdown-list">
               <ul class="select position">
                 <li>General Manager</li>
@@ -99,20 +106,40 @@
             </div>
           </div>
           <div class="formgroup">
+            <label for="">Contact Person</label>
+            <input type="text" name="contactPerson" autocomplete="OFF" required>
+          </div>
+          <div class="formgroup">
+            <label for="">Contact Number</label>
+            <input type="text" name="contactNumber" autocomplete="OFF" required>
+          </div>
+        </div>
+
+
+        <div class="personal-info">
+          <div class="formgroup">
+            <label for="">Allergies</label>
+            <input type="text" name="allergies" autocomplete="OFF" required>
+          </div>
+          <div class="formgroup">
+            <label for="">Blood Type</label>
+            <input type="text" name="bloodType" autocomplete="OFF" required>
+          </div>
+          <div class="formgroup">
             <label for="">SSS</label>
-            <input type="text" name="sss" autocomplete="OFF">
+            <input type="text" name="sss" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <label for="">Philhealth</label>
-            <input type="text" name="phil" autocomplete="OFF">
+            <input type="text" name="phil" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <label for="">Pagibig</label>
-            <input type="text" name="pagibig" autocomplete="OFF">
+            <input type="text" name="pagibig" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <label for="">TIN</label>
-            <input type="text" name="tin" autocomplete="OFF">
+            <input type="text" name="tin" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <button class="default-btn" id="addMaster">Submit</button>
@@ -128,7 +155,7 @@
   <script>
     $(document).ready(function() {
       // allowed numbers
-      $('input[name="mobile"]').on('input', function() {
+      $('input[name="mobile"], input[name="contactNumber"]').on('input', function() {
           const input = $(this);
           input.val(input.val().replace(/\D/g, ''));
       });

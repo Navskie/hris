@@ -8,8 +8,8 @@ $(document).ready(function() {
 
     function notif(title, message) {
       $(".notification").addClass("active");
-      $(".title").text(title);
-      $(".message").text(message);
+      $(".notification .title").text(title);
+      $(".notification .message").text(message);
     }
 
     $.ajax({
@@ -18,8 +18,14 @@ $(document).ready(function() {
       data: formData,
       dataType: "json",
       success: function (response) {
-        console.log(response.status)
         if (response.status === 'success') {
+          $(".notification").removeClass("active");
+          notif(response.title, response.message);
+          setTimeout(() => {
+            $(".notification").removeClass("active");
+            window.location.reload();
+          }, 3000);
+        } else if (response.status === 'empty') {
           $(".notification").removeClass("active");
           notif(response.title, response.message);
           setTimeout(() => {
