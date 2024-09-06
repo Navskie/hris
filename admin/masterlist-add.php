@@ -95,10 +95,14 @@
                 <li>General Manager</li>
                 <li>MIS Supervisor</li>
                 <li>Seniro Multimedia Artist</li>
+                <li>Multimedia Artist</li>
                 <li>Online Sales Consultant</li>
                 <li>Accounting</li>
                 <li>Accounting Supervisor</li>
                 <li>Advertising Team Lead</li>
+                <li>Account Officer</li>
+                <li>Marketing</li>
+                <li>Trainer</li>
                 <li>CS Representative</li>
                 <li>Logistic</li>
                 <li>Admin Staff</li>
