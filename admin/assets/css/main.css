@@ -61,6 +61,11 @@
   text-align: left;
 }
 
+#example_length > label > select > option {
+  background-color: #1E1E1E;
+  color: #fff;
+}
+
 .dropdown-menu li a:hover {
   background-color: #575757;
 }
@@ -133,6 +138,66 @@
 .navigation .icon i {
   color: #868686;
   font-size: 45px;
+}
+
+.masterTitle {
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#example_length > label {
+  color: #fff;
+  font-size: 12px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent;
+  padding: 5px 2px;
+  margin: 0 12px;
+  color: #fff;
+}
+
+#example_filter > label > input[type=search] {
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: #1E1E1E;
+  border: 1px solid #575454;
+  color: #fff;
+  margin-left:  13px;
+}
+
+#example_filter > label {
+  font-size: 15px;
+  color: #fff;
+}
+
+table.dataTable.no-footer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 29px 0;
+}
+
+#example_info {
+  color: #fff;
+}
+
+#example_previous, #example_next {
+  color: #fff !important;
+}
+
+#example_paginate > span > a {
+  background: cornflowerblue;
+  border-radius: 10px;
+  color: #fff !important;
+}
+
+table.dataTable.no-footer, table.dataTable thead th, table.dataTable thead td {
+  border-bottom: 1px solid #c2c2c2;
 }
 
 /* Media Query for Mobile */

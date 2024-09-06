@@ -12,8 +12,8 @@
 <body>
   
   <div class="notification">
-    <div class="title">Success</div>
-    <div class="message">asd asd asd asd</div>
+    <div class="title"></div>
+    <div class="message"></div>
   </div>
 
   <?php include_once 'include/navbar.php' ?>

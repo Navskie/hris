@@ -7,18 +7,19 @@ $response = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idNumber = htmlspecialchars($_POST['idNumber']);
-    $fullname = ucwords(htmlspecialchars($_POST['fullname']));
+    $fullnames = htmlspecialchars($_POST['fullname']);
+    $fullname = ucwords($fullnames);
     $mobile = htmlspecialchars($_POST['mobile']);
     $email = htmlspecialchars($_POST['email']);
     $civilstatus = htmlspecialchars($_POST['civilstatus']);
-    $address = htmlspecialchars(htmlspecialchars($_POST['address']));
+    $address = ucwords(htmlspecialchars($_POST['address']));
     $gender = htmlspecialchars($_POST['gender']);
     $datehired = htmlspecialchars($_POST['datehired']);
     $position = htmlspecialchars($_POST['position']);
-    $contactPerson = htmlspecialchars(htmlspecialchars($_POST['contactPerson']));
-    $contactNumber = htmlspecialchars($_POST['contactNumber']);
+    $contactPerson = ucwords(htmlspecialchars($_POST['contactPerson']));
+    $contactNumber = ucwords($_POST['contactNumber']);
     $bloodType = htmlspecialchars($_POST['bloodType']);
-    $allergies = htmlspecialchars(htmlspecialchars($_POST['allergies']));
+    $allergies = ucwords(htmlspecialchars($_POST['allergies']));
     $bday = htmlspecialchars($_POST['bday']);
     $sss = htmlspecialchars($_POST['sss']);
     $phil = htmlspecialchars($_POST['phil']);

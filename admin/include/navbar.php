@@ -6,7 +6,7 @@
           <a href="#">Masterlist</a>
           <ul class="dropdown-menu">
             <li><a href="masterlist-add">Add</a></li>
-            <li><a href="#">Record</a></li>
+            <li><a href="masterlist">Record</a></li>
           </ul>
         </li>
         <li class="dropdown">
