@@ -41,6 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt) {
             $stmt->bind_param('issssssssssssssiss', $idNumber, $fullname, $mobile, $email, $civilstatus, $gender, $address, $datehired, $position, $sss, $phil, $pagibig, $tin, $bday, $contactPerson, $contactNumber, $bloodType, $allergies);
 
+            $user_stmt = $db->prepare("INSERT INTO users (`idNumber`, `passWord`, `fullName`, `role`) VALUES (?, ?, ?, ?)");
+            $password = password_hash('123456', PASSWORD_DEFAULT);
+            $user_stmt->bind_param('isss', $idNumber, $password, $fullname, $role);
+
+            $role = 'employee';
+
+            $user_stmt->execute();
+
+
             if ($stmt->execute()) {
                 $response = [
                     'status' => 'success',
