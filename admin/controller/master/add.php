@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mobile = htmlspecialchars($_POST['mobile']);
     $email = htmlspecialchars($_POST['email']);
     $civilstatus = htmlspecialchars($_POST['civilstatus']);
-    $address = htmlspecialchars($_POST['address']);
+    $address = htmlspecialchars(htmlspecialchars($_POST['address']));
     $gender = htmlspecialchars($_POST['gender']);
     $datehired = htmlspecialchars($_POST['datehired']);
     $position = htmlspecialchars($_POST['position']);
-    $contactPerson = htmlspecialchars($_POST['contactPerson']);
+    $contactPerson = htmlspecialchars(htmlspecialchars($_POST['contactPerson']));
     $contactNumber = htmlspecialchars($_POST['contactNumber']);
     $bloodType = htmlspecialchars($_POST['bloodType']);
-    $allergies = htmlspecialchars($_POST['allergies']);
+    $allergies = htmlspecialchars(htmlspecialchars($_POST['allergies']));
     $bday = htmlspecialchars($_POST['bday']);
     $sss = htmlspecialchars($_POST['sss']);
     $phil = htmlspecialchars($_POST['phil']);
@@ -26,8 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tin = htmlspecialchars($_POST['tin']);
 
     if (empty($idNumber) || empty($fullname) || empty($mobile) || empty($email) ||
-        empty($civilstatus) || empty($address) || empty($gender) || empty($datehired) ||
-        empty($position) || empty($sss) || empty($phil) || empty($pagibig) || empty($tin)) {
+        empty($civilstatus) || empty($address) || empty($gender)) {
         $response = [
             'status' => 'failed',
             'title' => 'Failed',

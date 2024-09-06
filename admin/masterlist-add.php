@@ -19,11 +19,11 @@
   <?php include_once 'include/navbar.php' ?>
 
   <?php
-    $sql = "SELECT COUNT(id) as sum FROM masterlist";
-    $sql_query = mysqli_query($db, $sql);
-    $sql_fetch = mysqli_fetch_array($sql_query);
+    // $sql = "SELECT COUNT(id) as sum FROM masterlist";
+    // $sql_query = mysqli_query($db, $sql);
+    // $sql_fetch = mysqli_fetch_array($sql_query);
 
-    $idNumber = 111900003 + $sql_fetch['sum'];
+    // $idNumber = 111900003 + $sql_fetch['sum'];
   ?>
 
   <div class="content">
@@ -34,7 +34,7 @@
         <div class="personal-info">
           <div class="formgroup">
             <label for="">ID Number *</label>
-            <input type="text" class="disabled" name="idNumber" value="<?php echo $idNumber ?>" readonly>
+            <input type="text" class="disabled" name="idNumber" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <label for="">Fullname *</label>
@@ -102,6 +102,16 @@
                 <li>CS Representative</li>
                 <li>Logistic</li>
                 <li>Admin Staff</li>
+                <li>Maintenance</li>
+                <li>Laundry Supervisor</li>
+                <li>Laundry Attendant</li>
+                <li>Frontdesk Officer</li>
+                <li>House Keeping</li>
+                <li>Supervisor</li>
+                <li>Attendance</li>
+                <li>Hotel Supervisor</li>
+                <li>Staff</li>
+                <li>Cheif</li>
               </ul>
             </div>
           </div>
@@ -146,6 +156,7 @@
           </div>
         </div>
       </div>
+
     </form>
   </div>
 
