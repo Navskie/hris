@@ -21,13 +21,13 @@
 
   <div class="content">
     <h1 class="masterTitle">Employee Masterlist</h1>
-    <table id="example">
+    <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
           <th>ID Number</th>
           <th>Fullname</th>
           <th>Phone</th>
-          <th>Email Address</th>
+          <th>Email</th>
           <th>Date Hired</th>
           <th>Position</th>
         </tr>
@@ -54,7 +54,16 @@
         { "data": "emailAddress" },
         { "data": "dateHired" },
         { "data": "position" }
-      ]
+      ],
+      "responsive": true,
+        "columnDefs": [
+          {
+            "targets": -1, // Target the last column
+            "className": 'dt-control',
+            "orderable": false
+          }
+        ],
+        "order": [[0, 'asc']]
     });
   });
 </script>

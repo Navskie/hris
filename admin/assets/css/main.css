@@ -33,7 +33,6 @@
 .dropdown-menu {
   display: none;
   position: absolute;
-  flex-direction: row;
   z-index: 1;
   top: 100%;
   left: 0;
@@ -42,9 +41,10 @@
   transform: translateY(10px);
   padding: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
 }
 
-.dropdown:hover .dropdown-menu,
+.dropdown a:hover,
 .dropdown-menu.show {
   display: flex;
   opacity: 1;
@@ -200,6 +200,17 @@ table.dataTable.no-footer, table.dataTable thead th, table.dataTable thead td {
   border-bottom: 1px solid #c2c2c2;
 }
 
+.dataTables_wrapper .dataTables_scroll {
+  overflow: auto;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #1E1E1E; /* Light grey background for even rows */
+}
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #2e2d2d; /* White background for odd rows */
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
   .navbar {
@@ -211,6 +222,21 @@ table.dataTable.no-footer, table.dataTable thead th, table.dataTable thead td {
   }
 
   .content {
-    margin: 30px 30px;
+    margin: 30px 30px 120px 30px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  #masterlist_data > tr.child > td > ul > li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #masterlist_data > tr.child > td > ul > li > span.dtr-data {
+    color: yellowgreen;
   }
 }
