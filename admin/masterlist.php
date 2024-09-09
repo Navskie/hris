@@ -44,7 +44,7 @@
   $(document).ready(function() {
     $('#example').DataTable({
       "ajax": {
-        "url": "controller/form/changeShift.php", // Adjust the path if needed
+        "url": "controller/master/view", // Adjust the path if needed
         "dataSrc": ""
       },
       "columns": [
