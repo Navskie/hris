@@ -4,7 +4,7 @@
   <?php include_once '../cores/database.php' ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masterlist</title>
+  <title>Application Form | Leave</title>
   <!-- DataTables CSS and JS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
   <?php include_once 'include/header.php' ?>
@@ -20,16 +20,19 @@
   <?php include_once 'include/navbar.php' ?>
 
   <div class="content">
-    <h1 class="masterTitle">Employee Masterlist</h1>
+    <h1 class="masterTitle">Leave List</h1>
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
+          <th>Company</th>
+          <th>Date Applied</th>
           <th>ID Number</th>
           <th>Fullname</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Date Hired</th>
           <th>Position</th>
+          <th>Inclusive Date</th><!-- add number of days -->
+          <th>Type of Leave</th>
+          <th>Reason</th>
+          <th>Leave Status</th><!-- with or out pay -->
         </tr>
       </thead>
       <tbody id="masterlist_data">
@@ -44,10 +47,13 @@
   $(document).ready(function() {
     $('#example').DataTable({
       "ajax": {
-        "url": "controller/form/changeShift.php", // Adjust the path if needed
+        "url": "controller/master/view.php", // Adjust the path if needed
         "dataSrc": ""
       },
       "columns": [
+        { "data": "idNumber" },
+        { "data": "fullName" },
+        { "data": "mobileNumber" },
         { "data": "idNumber" },
         { "data": "fullName" },
         { "data": "mobileNumber" },

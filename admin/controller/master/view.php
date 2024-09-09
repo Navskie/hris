@@ -3,7 +3,7 @@
 
   header('Content-Type: application/json');
 
-  $query = "SELECT idNumber, fullName, mobileNumber, emailAddress, dateHired, position FROM masterlist ORDER BY id DESC";
+  $query = "SELECT * FROM masterlist ORDER BY id DESC";
   $result = $db->query($query);
 
   $data = array();

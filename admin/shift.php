@@ -4,7 +4,7 @@
   <?php include_once '../cores/database.php' ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masterlist</title>
+  <title>Application Form | Change Shift</title>
   <!-- DataTables CSS and JS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
   <?php include_once 'include/header.php' ?>
@@ -20,16 +20,21 @@
   <?php include_once 'include/navbar.php' ?>
 
   <div class="content">
-    <h1 class="masterTitle">Employee Masterlist</h1>
+    <h1 class="masterTitle">Change Shift List</h1>
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
-          <th>ID Number</th>
-          <th>Fullname</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Date Hired</th>
-          <th>Position</th>
+          <th>#</th>
+          <th>Company</th>
+          <th>date Applied</th>
+          <th>Employee</th><!-- name and id -->
+          <th>Change shift with</th>
+          <th>Date</th><!-- From to date -->
+          <th>Original Time</th>
+          <th>New Time</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <td>Action</td>
         </tr>
       </thead>
       <tbody id="masterlist_data">
@@ -38,26 +43,11 @@
     </table>
   </div>
 
-<?php include_once 'include/footer.php' ?>
+  <!-- Modal HTML -->
+  <?php include 'assets/modal/formModal.php' ?>
 
-<script>
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "ajax": {
-        "url": "controller/form/changeShift.php", // Adjust the path if needed
-        "dataSrc": ""
-      },
-      "columns": [
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "emailAddress" },
-        { "data": "dateHired" },
-        { "data": "position" }
-      ],
-      "responsive": true,
-    });
-  });
-</script>
-</body>
+  <?php include_once 'include/footer.php' ?>
+
+  <script src="assets/js/form/shift.js"></script>
+  </body>
 </html>

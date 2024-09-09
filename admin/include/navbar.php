@@ -1,7 +1,7 @@
 <div class="navbar">
     <div class="link">
       <ul>
-        <li><a href="#">Dashboard</a></li>
+        <li><a href="index">Dashboard</a></li>
         <li class="dropdown">
           <a href="#">Masterlist</a>
           <ul class="dropdown-menu">
@@ -19,10 +19,10 @@
         <li class="dropdown">
           <a href="#">Application Form</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Shift</a></li>
-            <li><a href="#">Leave</a></li>
-            <li><a href="#">OB</a></li>
-            <li><a href="#">Overtime</a></li>
+            <li><a href="shift">Shift</a></li>
+            <li><a href="leave">Leave</a></li>
+            <li><a href="ob">OB</a></li>
+            <li><a href="overtime">Overtime</a></li>
           </ul>
         </li>
         <li><a href="#">Leave Credits</a></li>
