@@ -24,16 +24,16 @@
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
+          <th>#</th>
           <th>Company</th>
           <th>Date Applied</th>
-          <th>ID Number</th>
-          <th>Fullname</th>
+          <th>Employee</th>
           <th>Position</th>
-          <th>Date</th>
+          <th>Inclusive Date</th>
           <th>Reason</th>
-          <th>Start to End</th>
           <th>Hours</th>
-          <th>Remarks</th>
+          <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody id="masterlist_data">
@@ -42,30 +42,11 @@
     </table>
   </div>
 
+<!-- Modal HTML -->
+<?php include 'assets/modal/formModal.php' ?>
+
 <?php include_once 'include/footer.php' ?>
 
-<script>
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "ajax": {
-        "url": "controller/master/view.php", // Adjust the path if needed
-        "dataSrc": ""
-      },
-      "columns": [
-        { "data": "idNumber" },
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "emailAddress" },
-        { "data": "dateHired" },
-        { "data": "position" }
-      ],
-      "responsive": true,
-    });
-  });
-</script>
+<script src="assets/js/form/overtime.js"></script>
 </body>
 </html>
