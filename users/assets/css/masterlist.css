@@ -35,13 +35,14 @@
   padding-left: 8px;
 }
 
-.formgroup input {
+.formgroup input, .formgroup textarea {
   outline: none;
   padding: 10px 16px;
   border-radius: 5px;
   background-color: #1E1E1E;
   border: 1px solid #575454;
   color: #fff;
+  width: 100%;
 }
 
 .formgroup .disabled {

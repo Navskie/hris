@@ -51,24 +51,16 @@ $(document).ready(function() {
     }
   });
 
-  $('#confirmApprove').on('click', function() {
+  $('#confirmCancel').on('click', function() {
     if (selectedRow) {
-      updateStatus(selectedRow.id, 'Approved');
+      updateStatus(selectedRow.id, 'Canceled');
       $modal.hide();
-    }
-  });
-
-  $('#confirmReject').on('click', function() {
-    if (selectedRow) {
-      updateStatus(selectedRow.id, 'Rejected');
-      $modal.hide();
-    } else {
     }
   });
 
   function updateStatus(id, status) {
     $.ajax({
-      url: 'controller/form/shiftUpdate.php',
+      url: 'controller/form/shiftUpdate',
       method: 'POST',
       data: {
         id: id,

@@ -3,7 +3,7 @@
 
   header('Content-Type: application/json');
 
-  $query = "SELECT * FROM shift ORDER BY id DESC";
+  $query = "SELECT * FROM shift WHERE idNumber = '$myidNumber'";
   $result = $db->query($query);
 
   $data = array();

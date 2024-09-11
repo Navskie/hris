@@ -22,7 +22,7 @@
   <div class="content">
     <div class="header-form">
       <h1 class="masterTitle">Change Shift List</h1>
-      <a href="#">File Change Shift</a>
+      <a href="shiftFile">File Change Shift</a>
     </div>
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
