@@ -4,7 +4,7 @@
   <?php include_once '../cores/database.php' ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application Form | Change Shift</title>
+  <title>Application Form | Overtime</title>
   <!-- DataTables CSS and JS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
   <?php include_once 'include/header.php' ?>
@@ -21,8 +21,8 @@
 
   <div class="content">
     <div class="header-form">
-      <h1 class="masterTitle">Change Shift List</h1>
-      <a href="shiftFile">File Change Shift</a>
+      <h1 class="masterTitle">Overtime List</h1>
+      <a href="overtimeFile">File Overtime</a>
     </div>
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
@@ -31,10 +31,10 @@
           <th>Company</th>
           <th>Date Applied</th>
           <th>Employee</th><!-- name and id -->
-          <th>Change shift with</th>
-          <th>Date</th><!-- From to date -->
-          <th>Original Time</th>
-          <th>New Time</th>
+          <th>Position</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Hours</th>
           <th>Reason</th>
           <th>Status</th>
           <td>Action</td>
@@ -51,6 +51,6 @@
 
   <?php include_once 'include/footer.php' ?>
 
-  <script src="assets/js/form/shift.js"></script>
+  <script src="assets/js/form/overtime.js"></script>
   </body>
 </html>

@@ -19,46 +19,41 @@
   <?php include_once 'include/navbar.php' ?>
 
   <div class="content">
-    <h1 class="header">Change Shift Application</h1>
-    <form id="changeshiftForm">
+    <h1 class="header">Overtime Application</h1>
+    <form id="overtimeForm">
     
       <div class="masterlist"> 
 
         <div class="personal-info">
           <div class="formgroup">
-            <label for="">Change Shift With *</label>
-            <input type="text" name="with" autocomplete="OFF">
-          </div>
-          <div class="formgroup">
-            <label for="">Start Date *</label>
+            <label for="">Date *</label>
             <input type="text" id="startDate" name="startDate" placeholder="YYYY-MM-DD" autocomplete="OFF">
-          </div>
-          <div class="formgroup">
-            <label for="">End Date *</label>
-            <input type="text" id="endDate" name="endDate" placeholder="YYYY-MM-DD" autocomplete="OFF">
           </div>
           <div class="formgroup">
             <label for="">Company *</label>
             <input type="text" name="company" autocomplete="OFF">
           </div>
+          <div class="formgroup">
+            <label for="">Start Time *</label>
+            <input type="text" name="startTime" placeholder="24:00" autocomplete="OFF">
+          </div>
+          <div class="formgroup">
+            <label for="">End Time *</label>
+            <input type="text" name="endTime" placeholder="24:00" autocomplete="OFF">
+          </div>
         </div>
-
 
         <div class="personal-info">
           <div class="formgroup">
-            <label for="">Original Time *</label>
-            <input type="text" name="originalTime" placeholder="24:00" autocomplete="OFF">
-          </div>
-          <div class="formgroup">
-            <label for="">New Time *</label>
-            <input type="text" name="newTime" placeholder="24:00" autocomplete="OFF">
+            <label for="">Total Hours *</label>
+            <input type="text" name="hours" autocomplete="OFF">
           </div>
           <div class="formgroup">
             <label for="">Reason *</label>
             <textarea name="reason" rows="5" cols="30"></textarea>
           </div>
           <div class="formgroup">
-            <button class="default-btn" id="submitChangeShift">Submit</button>
+            <button class="default-btn" id="submitOvertime">Submit</button>
           </div>
         </div>
       </div>
@@ -67,7 +62,7 @@
   </div>
 
   <?php include_once 'include/footer.php' ?>
-  <script src="assets/js/application/shift.js"></script>
+  <script src="assets/js/application/overtime.js"></script>
 
 </body>
 </html>
