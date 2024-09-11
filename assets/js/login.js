@@ -26,7 +26,7 @@ $(document).ready(function() {
               } else if (response.role === 'assistant') {
                 window.location.href = 'admin/index';
               } else {
-                window.location.href = 'dashboard';
+                window.location.href = 'users/index';
               }
             }, 3000);
           } else {

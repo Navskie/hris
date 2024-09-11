@@ -1,0 +1,118 @@
+.masterlist {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.content .header {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+ 
+.personal-info .formgroup {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formgroup label {
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+
+.formgroup input {
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: #1E1E1E;
+  border: 1px solid #575454;
+  color: #fff;
+}
+
+.formgroup .disabled {
+  background-color: #2e2a2a;
+  color: #8f8989;
+}
+
+.default-btn {
+  padding: 10px 16px;
+  margin-top: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #052e88;
+  color: #fff;
+  cursor: pointer;
+}
+
+.formgroup span {
+  font-size: 12px;
+  color: red;
+}
+
+.formgroup ul {
+  /* bottom: -86px; */
+  z-index: 100;
+  background-color: #2e2a2a;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.formgroup ul::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.formgroup ul::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the track */
+}
+
+.formgroup ul::-webkit-scrollbar-thumb {
+  background: rebeccapurple; /* Color of the handle */
+}
+
+.formgroup ul::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color when hovered */
+}
+
+
+.dropdown-list {
+  position: relative;
+}
+
+.formgroup ul li {
+  list-style: none;
+  color: #fff;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.formgroup ul li:hover {
+  background-color: rebeccapurple;
+}
+
+@media (max-width: 768px) {
+  .masterlist {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+}

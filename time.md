@@ -17,4 +17,12 @@ Pass : 1123
 HRIS
 - application form (Changeshift) - 100%
 - application form (Overtime) - 100%
-- create dashboard for employee.
+- creating dashboard for employee.
+
+live demo 
+
+uptimised-hris.com
+
+admin account
+ID : 111900000
+Pass : 1123
