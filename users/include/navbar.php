@@ -18,6 +18,9 @@
             <li><a href="overtimeForm">Overtime</a></li>
           </ul>
         </li>        
+        <li class="dropdown">
+          <a href="logs">Activities</a>
+        </li>        
       </ul>
     </div>
 

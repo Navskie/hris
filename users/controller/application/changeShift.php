@@ -31,6 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt) {
             $stmt->bind_param('ssssssssisss', $with, $startDate, $endDate, $originalTime, $newTime, $reason, $company, $myName, $myidNumber, $myPosition, $dateNow, $status);
 
+            $remarks = 'Employee Applied for Change Shift';
+            $page = 'Change Shift File';
+
+            $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
+
             if ($stmt->execute()) {
                 $response = [
                     'status' => 'success',
