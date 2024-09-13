@@ -79,7 +79,7 @@ $(document).ready(function() {
 		return formatted + ' ' + amPm;
 	}
 
-	$('input[name="originalTime"], input[name="newTime"]').on('input', function() {
+	$('input[name="originalTime"], input[name="newTime"], input[name="detime"], input[name="retime"], input[name="arrtime"], input[name="deendtime"]').on('input', function() {
 		var formattedTime = formatTime($(this).val());
 		$(this).val(formattedTime);
 	});
