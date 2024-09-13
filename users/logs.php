@@ -20,13 +20,18 @@
 
   <div class="content">
     <h1 class="header">Activity Logs</h1>
+  <?php 
+    $row = mysqli_query($db, "SELECT * FROM users_log WHERE idNumber = '$myidNumber'");
+    foreach ($row as $data) {
+  ?>
     <div class="activity-body">
       <span class="text">
-        <h1>Official Business File</h1>
-        <p>Employee Applied for Official Business</p>
+        <h1><?php echo $data['page'] ?></h1>
+        <p><?php echo $data['remarks'] ?></p>
       </span>
-      <span class="date">2023-02-02</span>
+      <span class="date"><?php echo $data['created_at'] ?></span>
     </div>
+  <?php } ?>
   </div>
 
   <?php include_once 'include/footer.php' ?>

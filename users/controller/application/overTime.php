@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt) {
             $stmt->bind_param('sssssssisss', $startDate, $startTime, $endTime, $hours, $reason, $company, $myName, $myidNumber, $myPosition, $dateNow, $status);
 
-            $remarks = 'Employee Applied for Overtime';
+            $remarks = $myName.' Applied for Overtime';
             $page = 'Overtime File';
 
             $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
