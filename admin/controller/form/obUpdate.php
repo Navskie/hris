@@ -21,7 +21,7 @@ if ($id === null || $status === null) {
 }
 
 // Prepare and execute update query
-$query = "UPDATE overtime SET status = ? WHERE id = ?";
+$query = "UPDATE ob SET status = ? WHERE id = ?";
 $stmt = $db->prepare($query);
 
 if ($stmt === false) {
@@ -33,8 +33,8 @@ $stmt->bind_param('si', $status, $id);
 $response = ['success' => false];
 
 if ($stmt->execute()) {
-    $remarks = $myName.' User Update Overtime Status into '.$status;
-    $page = 'Overtime File';
+    $remarks = $myName.' User Update Official Business Status into '.$status;
+    $page = 'Official Business File';
 
     $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
 

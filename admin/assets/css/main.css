@@ -261,27 +261,12 @@ table.dataTable tbody tr:nth-child(odd) {
   color: #fff;
 }
 
-.manage-btn {
+.action-btn {
   padding: 8px 16px;
   border: none;
   background: darkslategrey;
   color: #fff;
   cursor: pointer;
-}
-
-#masterlist_data > tr.odd > td.sorting_1.dtr-control {
-  cursor: pointer;
-  background: #635ab0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#masterlist_data > tr.even > td.sorting_1.dtr-control {
-  cursor: pointer;
-  background: #635ab0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #masterlist_data > tr.child > td > ul > li {

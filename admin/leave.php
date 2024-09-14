@@ -24,15 +24,17 @@
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
+          <th>#</th>
+          <td>Action</td>
           <th>Company</th>
           <th>Date Applied</th>
-          <th>ID Number</th>
-          <th>Fullname</th>
-          <th>Position</th>
-          <th>Inclusive Date</th><!-- add number of days -->
+          <th>Employee</th><!-- name and id -->
+          <th>Inclusive Date</th>
+          <th>Days</th><!-- From to date -->
           <th>Type of Leave</th>
+          <th>Leave Status</th>
           <th>Reason</th>
-          <th>Leave Status</th><!-- with or out pay -->
+          <th>Status</th>
         </tr>
       </thead>
       <tbody id="masterlist_data">
@@ -41,29 +43,11 @@
     </table>
   </div>
 
-<?php include_once 'include/footer.php' ?>
+  <!-- Modal HTML -->
+  <?php include 'assets/modal/formModal.php' ?>
 
-<script>
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "ajax": {
-        "url": "controller/master/view.php", // Adjust the path if needed
-        "dataSrc": ""
-      },
-      "columns": [
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "emailAddress" },
-        { "data": "dateHired" },
-        { "data": "position" }
-      ],
-      "responsive": true,
-    });
-  });
-</script>
-</body>
+  <?php include_once 'include/footer.php' ?>
+
+  <script src="assets/js/form/leave.js"></script>
+  </body>
 </html>

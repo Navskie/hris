@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   var table = $('#example').DataTable({
     "ajax": {
-      "url": "controller/form/shiftData",
+      "url": "controller/form/leaveData",
       "dataSrc": ""
     },
     "columns": [
@@ -18,10 +18,10 @@ $(document).ready(function() {
       { "data": "company" },
       { "data": "dateApplied" },
       { "data": "employee" },
-      { "data": "shiftWith" },
       { "data": "date" },
-      { "data": "originalTime" },
-      { "data": "newTime" },
+      { "data": "days" },
+      { "data": "typeofLeave" },
+      { "data": "leaveStatus" },
       { "data": "reason" },
       { "data": "status" },
       
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
   function updateStatus(id, status) {
     $.ajax({
-      url: 'controller/form/shiftUpdate.php',
+      url: 'controller/form/leaveUpdate.php',
       method: 'POST',
       data: {
         id: id,
