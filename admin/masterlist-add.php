@@ -18,14 +18,6 @@
 
   <?php include_once 'include/navbar.php' ?>
 
-  <?php
-    // $sql = "SELECT COUNT(id) as sum FROM masterlist";
-    // $sql_query = mysqli_query($db, $sql);
-    // $sql_fetch = mysqli_fetch_array($sql_query);
-
-    // $idNumber = 111900003 + $sql_fetch['sum'];
-  ?>
-
   <div class="content">
     <h1 class="header">Employee Information</h1>
     <form id="masterlistForm">

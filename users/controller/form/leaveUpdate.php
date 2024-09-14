@@ -26,6 +26,11 @@
   $response = ['success' => false];
 
   if ($stmt->execute()) {
+      $remarks = $myName.' Update the status of Leave into Canceled';
+      $page = 'Leave File';
+
+      $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
+
       $response['success'] = true;
   } else {
       $response['message'] = 'Error updating status: ' . $stmt->error;

@@ -21,23 +21,23 @@
   <div class="content">
     <h1 class="header">Activity Logs</h1>
   <?php 
-    // Calculate the date 7 days ago
     $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
 
-    // Fetch logs from the last 7 days
     $query = "SELECT * FROM users_log WHERE idNumber = '$myidNumber' AND created_at >= '$sevenDaysAgo' ORDER BY created_at DESC";
     $result = mysqli_query($db, $query);
 
-    // Check if the query executed successfully
     if (mysqli_num_rows($result) > 0) {
       foreach ($result as $data) {
+      $timestamp = $data['created_at'];
+      $date = new DateTime($timestamp);
+      $formattedDate = $date->format('l, F j, Y \a\t g:i A');
   ?>
     <div class="activity-body">
       <span class="text">
         <h1><?php echo htmlspecialchars($data['page']); ?></h1>
         <p><?php echo htmlspecialchars($data['remarks']); ?></p>
       </span>
-      <span class="date"><?php echo htmlspecialchars($data['created_at']); ?></span>
+      <span class="date"><?php echo htmlspecialchars($formattedDate); ?></span>
     </div>
   <?php 
       }

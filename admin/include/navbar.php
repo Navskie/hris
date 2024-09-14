@@ -25,7 +25,7 @@
             <li><a href="overtime">Overtime</a></li>
           </ul>
         </li>
-        <li><a href="#">Leave Credits</a></li>
+        <li><a href="leaveCredit">Leave Credits</a></li>
         <li><a href="#">Allowance</a></li>
         <li class="dropdown">
           <a href="#">Contribution</a>
