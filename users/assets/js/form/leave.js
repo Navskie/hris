@@ -7,7 +7,14 @@ $(document).ready(function() {
       "dataSrc": ""
     },
     "columns": [
-      { "data": "id" },
+      {
+        "data": null,
+        "defaultContent": "<button class='action-btn'>View</button>"
+      },
+      {
+        "data": null,
+        "defaultContent": "<button class='action-btn manage-btn'>Manage</button>"
+      },
       { "data": "company" },
       { "data": "dateApplied" },
       { "data": "employee" },
@@ -18,10 +25,6 @@ $(document).ready(function() {
       { "data": "reason" },
       { "data": "leavestatus" },
       { "data": "status" },
-      {
-        "data": null,
-        "defaultContent": "<button class='action-btn manage-btn'>Manage</button>"
-      }
     ],
     "responsive": true,
   });
@@ -61,7 +64,7 @@ $(document).ready(function() {
 
   function updateStatus(id, status) {
     $.ajax({
-      url: 'controller/form/shiftUpdate',
+      url: 'controller/form/leaveUpdate',
       method: 'POST',
       data: {
         id: id,

@@ -28,6 +28,7 @@
       <thead>
         <tr>
           <th>#</th>
+          <td>Action</td>
           <th>Company</th>
           <th>Date Applied</th>
           <th>Employee</th><!-- name and id -->
@@ -39,7 +40,7 @@
           <th>Departure Time</th>
           <th>Reason</th>
           <th>Status</th>
-          <td>Action</td>
+          
         </tr>
       </thead>
       <tbody id="masterlist_data">
