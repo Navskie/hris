@@ -16,6 +16,7 @@ HRIS
 - (user) credit leave automatically deduct - 50%
 - (user) change password - 100%
 - (admin) activities added - 100%
+- (admin) update employee leave - 80%
 - creating database for users history and admin activities - 100%
 - designing users activities - 100%
 
