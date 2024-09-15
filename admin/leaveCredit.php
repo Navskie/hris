@@ -37,6 +37,8 @@
     </table>
   </div>
 
+  <?php include_once 'assets/modal/creditModal.php' ?>
+
 <?php include_once 'include/footer.php' ?>
 
 <script src="assets/js/credit/leaveCredit.js"></script>

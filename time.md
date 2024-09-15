@@ -1,6 +1,5 @@
-9/13
+9/14
 - uptimised backup database
-- Encode UAE promo 
 HRIS 
 - (admin) application form (Changeshift) - 100%
 - (admin) application form (Overtime) - 100%
@@ -9,6 +8,11 @@ HRIS
 - (user) filling overtime - 90%
 - (user) filling OB - 90%
 - (user) filling leave - 90%
+- (admin) application form (leave) - 100%
+- (admin) application form (Official Business) - 100%
+- (admin) leave credit page - 70%
+- (user) dashboard - 70%
+- (admin) dashboard - 60%
 - creating database for users history and admin activities - 100%
 - designing users activities - 100%
 

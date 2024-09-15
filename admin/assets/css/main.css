@@ -233,6 +233,27 @@ table.dataTable tbody tr:nth-child(odd) {
   border-radius: 25px;
 }
 
+#editForm {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+#editForm #editCredit {
+  padding: 8px 12px;
+}
+
+.updateCredit {
+  padding: 8px 12px;
+  border: none;
+  background-color: #1E1E1E;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
 .modal #modalMessage {
   font-size: 15px;
   margin: 35px 0;
