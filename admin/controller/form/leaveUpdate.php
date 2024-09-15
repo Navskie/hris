@@ -1,51 +1,61 @@
 <?php
-include_once '../../../cores/database.php';
+	include_once '../../../cores/database.php';
 
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+	header('Content-Type: application/json');
 
-// Clear any previous output
-ob_clean();
+	// Get POST data
+	$id = isset($_POST['id']) ? $_POST['id'] : null;
+	$status = isset($_POST['status']) ? $_POST['status'] : null;
 
-header('Content-Type: application/json');
+	// Validate input
+	if ($id === null || $status === null) {
+			echo json_encode(['success' => false, 'message' => 'Invalid input']);
+			exit;
+	}
 
-// Get POST data
-$id = isset($_POST['id']) ? $_POST['id'] : null;
-$status = isset($_POST['status']) ? $_POST['status'] : null;
+	// Prepare and execute update query
+	$query = "UPDATE leaves SET status = ? WHERE id = ?";
+	$stmt = $db->prepare($query);
 
-// Validate input
-if ($id === null || $status === null) {
-    echo json_encode(['success' => false, 'message' => 'Invalid input']);
-    exit;
-}
+	if ($stmt === false) {
+		echo json_encode(['success' => false, 'message' => 'Database prepare error: ' . $db->error]);
+		exit;
+	}
 
-// Prepare and execute update query
-$query = "UPDATE leaves SET status = ? WHERE id = ?";
-$stmt = $db->prepare($query);
+	$stmt->bind_param('si', $status, $id);
+	$response = ['success' => false];
 
-if ($stmt === false) {
-  echo json_encode(['success' => false, 'message' => 'Database prepare error: ' . $db->error]);
-  exit;
-}
+	if ($stmt->execute()) {
+		if ($status === 'Approved') {
+			// Fetch idNumber and leaveStatus
+			$query = "SELECT idNumber, leaveStatus FROM leaves WHERE id = '$id'";
+			$result = mysqli_query($db, $query);
+		
+			if ($row = mysqli_fetch_assoc($result)) {
+				$userIdNumber = $row['idNumber'];
+				$userLeaveStatus = $row['leaveStatus'];
+		
+				if ($userLeaveStatus === 'With Pay') {
+					// Update leave credit
+					$updateQuery = "UPDATE leave_credit SET credit = credit - 1 WHERE idNumber = '$userIdNumber'";
+					mysqli_query($db, $updateQuery);
+				}
+			}
+		}	
+	
+		$remarks = $myName.' User Update Leave Status into '.$status;
+		$page = 'Leave File';
 
-$stmt->bind_param('si', $status, $id);
-$response = ['success' => false];
+		$sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
 
-if ($stmt->execute()) {
-    $remarks = $myName.' User Update Leave Status into '.$status;
-    $page = 'Leave File';
+		$response['success'] = true;
+	} else {
+		$response['message'] = 'Error updating status: ' . $stmt->error;
+	}
 
-    $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
+	$stmt->close();
+	$db->close();
 
-    $response['success'] = true;
-} else {
-    $response['message'] = 'Error updating status: ' . $stmt->error;
-}
-
-$stmt->close();
-$db->close();
-
-// Output JSON
-echo json_encode($response);
+	// Output JSON
+	echo json_encode($response);
 ?>

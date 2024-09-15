@@ -54,7 +54,7 @@
         </div>
         <div class="details">
           <h1>Leave</h1>
-          <span class="number">10</span>
+          <span class="number"><?php echo $myCredit ?></span>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@
             <li><a href="#">PAGIBIG</a></li>
           </ul>
         </li>
-        <li><a href="#">13th Month</a></li>
+        <li><a href="logs">Activities</a></li>
       </ul>
     </div>
 
