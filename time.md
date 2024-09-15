@@ -1,18 +1,21 @@
-9/14
+9/16
 - uptimised backup database
 HRIS 
 - (admin) application form (Changeshift) - 100%
 - (admin) application form (Overtime) - 100%
 - (admin) encoding employee 18/61
-- (user) filling change shift - 90%
-- (user) filling overtime - 90%
-- (user) filling OB - 90%
-- (user) filling leave - 90%
+- (user) filling change shift - 95%
+- (user) filling overtime - 95%
+- (user) filling OB - 95%
+- (user) filling leave - 95%
 - (admin) application form (leave) - 100%
 - (admin) application form (Official Business) - 100%
-- (admin) leave credit page - 70%
-- (user) dashboard - 70%
+- (admin) leave credit page - 80%
+- (user) dashboard - 90%
 - (admin) dashboard - 60%
+- (user) credit leave automatically deduct - 50%
+- (user) change password - 100%
+- (admin) activities added - 100%
 - creating database for users history and admin activities - 100%
 - designing users activities - 100%
 

@@ -302,6 +302,26 @@ table.dataTable tbody tr:nth-child(odd) {
   color: yellowgreen;
 }
 
+
+.activity-body {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  border-radius: 15px;
+  border: 1px solid #575757;
+  padding: 8px 12px;
+}
+
+.activity-body .date {
+  font-size: 15px;
+}
+
+.activity-body .text h1 {
+  font-size: 20px;
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
   .navbar {
