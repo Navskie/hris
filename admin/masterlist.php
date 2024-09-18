@@ -24,12 +24,24 @@
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
-          <th>ID Number</th>
-          <th>Fullname</th>
+          <th>Action</th>
+          <th>Employee</th>
           <th>Phone</th>
           <th>Email</th>
+          <th>Birthday</th>
+          <th>Civil Status</th>
+          <th>Gender</th>
+          <th>Address</th>
           <th>Date Hired</th>
           <th>Position</th>
+          <th>Contact Person</th>
+          <th>Contact Number</th>
+          <th>Blood Type</th>
+          <th>Allergy</th>
+          <th>SSS</th>
+          <th>PHILHEALTH</th>
+          <th>PAGIBIG</th>
+          <th>TIN</th>
         </tr>
       </thead>
       <tbody id="masterlist_data">
@@ -40,24 +52,6 @@
 
 <?php include_once 'include/footer.php' ?>
 
-<script>
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "ajax": {
-        "url": "controller/master/view", // Adjust the path if needed
-        "dataSrc": ""
-      },
-      "columns": [
-        { "data": "idNumber" },
-        { "data": "fullName" },
-        { "data": "mobileNumber" },
-        { "data": "emailAddress" },
-        { "data": "dateHired" },
-        { "data": "position" }
-      ],
-      "responsive": true,
-    });
-  });
-</script>
+<script src="assets/js/masterlist/view.js"></script>
 </body>
 </html>

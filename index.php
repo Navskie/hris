@@ -11,6 +11,8 @@
         header('Location: admin/index');
       } elseif ($_SESSION['role'] == 'assistant') {
         header('Location: assistant/index');
+      }  elseif ($_SESSION['role'] == 'employee') {
+        header('Location: users/index');
       }
       exit();
     }
