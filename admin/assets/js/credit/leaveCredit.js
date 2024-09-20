@@ -7,10 +7,10 @@ $(document).ready(function() {
       "dataSrc": ""
     },
     "columns": [
-      {
-        "data": null,
-        "defaultContent": "<button class='action-btn edit-btn'>Edit</button>"
-      },
+      // {
+      //   "data": null,
+      //   "defaultContent": "<button class='action-btn edit-btn'>Edit</button>"
+      // },
       { "data": "idNumber" },
       { "data": "fullName" },
       { "data": "position" },
