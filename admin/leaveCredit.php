@@ -24,7 +24,7 @@
     <table id="example" class="display nowrap" style="width: 100%;">
       <thead>
         <tr>
-          <!-- <th>Action</th> -->
+          <th>Action</th>
           <th>ID Number</th>
           <th>Fullname</th>
           <th>Position</th>
