@@ -52,6 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $credit = mysqli_query($db, "INSERT INTO leave_credit (`idNumber`) VALUES ('$idNumber')");
 
+                $remarks = "The ".$myName." added the ".$idNumber." to the masterlist";
+                $page = 'Leave Credit';
+
+                $sql_logs = mysqli_query($db, "INSERT INTO users_log (`idNumber`, `remarks`, `page`) VALUES ('$myidNumber', '$remarks', '$page')");
+
                 $response = [
                     'status' => 'success',
                     'title' => 'Success',
