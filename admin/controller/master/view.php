@@ -3,7 +3,7 @@
 
   header('Content-Type: application/json');
 
-  $query = "SELECT * FROM masterlist";
+  $query = "SELECT * FROM masterlist WHERE idNumber != '111900000'";
   $result = $db->query($query);
 
   $data = array();

@@ -30,7 +30,7 @@
           </div>
           <div class="formgroup">
             <label for="">Fullname *</label>
-            <input type="text" name="fullname" autocomplete="OFF" required>
+            <input type="text" name="fullname" autocomplete="OFF" placeholder="First Middle Last (Name)" required>
           </div>
           <div class="formgroup">
             <label for="">Mobile Number *</label>
@@ -113,7 +113,7 @@
           </div>
           <div class="formgroup">
             <label for="">Contact Person</label>
-            <input type="text" name="contactPerson" autocomplete="OFF" required>
+            <input type="text" name="contactPerson" placeholder="First Middle Last (Name)" autocomplete="OFF" required>
           </div>
           <div class="formgroup">
             <label for="">Contact Number</label>
