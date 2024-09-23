@@ -27,3 +27,7 @@ uptimised-hris.com
 admin account
 ID : 111900000
 Pass : 1123
+
+sample employee
+ID : #
+Pass : 123456
